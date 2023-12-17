@@ -34,13 +34,13 @@ func main() {
 	fmt.Printf("2: len=%d, cap=%d, %v, (took %v)\n", len(aRes2), cap(aRes2), aRes2[deletingIdx-2:deletingIdx+3], time.Since(st))
 
 	// СПОСОБ 2
-	с := make([]int, dataSize) //заведомо выделим нужное количество места, чтобы не было лишних аллокаций
-	for i := 0; i < cap(с); i++ {
-		с[i] = i
+	c := make([]int, dataSize) //заведомо выделим нужное количество места, чтобы не было лишних аллокаций
+	for i := 0; i < cap(c); i++ {
+		c[i] = i
 	}
-	fmt.Printf("3: len=%d, cap=%d, %v, (inital state)\n", len(с), cap(с), с[deletingIdx-2:deletingIdx+3])
+	fmt.Printf("3: len=%d, cap=%d, %v, (inital state)\n", len(c), cap(c), c[deletingIdx-2:deletingIdx+3])
 	st = time.Now()
-	aRes3, _ := RemoveElementInSlice3(с, deletingIdx)
+	aRes3, _ := RemoveElementInSlice3(c, deletingIdx)
 	fmt.Printf("3: len=%d, cap=%d, %v, (took %v)\n", len(aRes3), cap(aRes3), aRes3[deletingIdx-2:deletingIdx+3], time.Since(st))
 
 }

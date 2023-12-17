@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 // УСЛОВИЕ:
 // Разработать программу, которая переворачивает подаваемую на ход строку (например: «главрыба — абырвалг»).
@@ -28,7 +31,9 @@ func main() {
 
 	// Считать строку с консоли
 	var input string
-	fmt.Scanln(&input)
+	if _, err := fmt.Scanln(&input); err != nil {
+		log.Fatal("У вас проблемы")
+	}
 
 	// Перевернуть строку с учетом Unicode
 	result := ReverseString(input)
